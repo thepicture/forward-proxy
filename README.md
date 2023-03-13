@@ -20,6 +20,29 @@ PORT=8080 \
 npm start
 ```
 
+## Install with Docker
+
+```bash
+vim .env
+```
+
+In `.env`, set up variables:
+
+```bash
+BYPASS_REGEX='ad'
+PROXY_HOST='example.com'
+PROXY_PORT='1234'
+PROXY_USER='user'
+PROXY_PASSWORD='password'
+PORT=1234
+```
+
+## Run with Docker
+
+```bash
+sudo docker compose up
+```
+
 ## Environment variables
 
 `BYPASS_REGEX` - if declared, will be used to _not_ proxy incoming address request. e.g. `BYPASS_REGEX='ad'` will bypass `example.ad.com`, `ad.example.com`,`example.com.ad`. Equivalent to `new RegExp(BYPASS_REGEX)`
@@ -35,11 +58,9 @@ Make apps that support proxy to support authenticated proxy with url filter
 ## Structure
 
 ```
-
 [client] -> [local server] -> [authenticated proxy] -> [endpoint]
-pipe pipe call
+........pipe..............pipe.....................call..........
 
 [client] <- [local server] <- [authenticated proxy] <- [endpoint]
-pipe pipe byte
-
+........pipe..............pipe.....................bits..........
 ```
