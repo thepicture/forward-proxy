@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  ts-node-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/app/src
+    container_name: forward-proxy-node
+    expose:
+      - '${PORT}'
+    ports:
+      - '${PORT}:${PORT}'
+    command: npm start
