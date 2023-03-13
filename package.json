@@ -1,0 +1,16 @@
+{
+  "name": "forward-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2"
+  }
+}
