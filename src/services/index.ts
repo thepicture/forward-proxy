@@ -4,3 +4,4 @@ export * from "./ProxyFirewall";
 export * from "./Socket";
 export * from "./AuthMessage";
 export * from "./AddressParser";
+export * from "./Session";
