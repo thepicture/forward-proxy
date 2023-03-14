@@ -9,8 +9,8 @@ services:
     volumes:
       - ./src:/app/src
     container_name: forward-proxy-node
-    expose:
-      - '${PORT}'
+    env_file:
+      - .env
     ports:
       - '${PORT}:${PORT}'
     command: npm start
