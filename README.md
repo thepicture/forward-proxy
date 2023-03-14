@@ -32,7 +32,7 @@ In `.env`, set up variables:
 BYPASS_REGEX='ad'
 PROXY_HOST='example.com'
 PROXY_PORT='1234'
-PROXY_USER='user'
+PROXY_USER='user_session-${session}'
 PROXY_PASSWORD='password'
 PORT=1234
 ```
@@ -50,6 +50,8 @@ sudo docker compose up
 `PROXY_HOST`, `PROXY_PORT`, `PROXY_USER`, `PROXY_PASSWORD` - declare a end proxy that the local proxy will use to pipe requests
 
 `PORT` - on what port will the local proxy listen to, if omitted, sets to `8080`
+
+`${session}` - will be changed to a random string in user or password string
 
 ## Goal
 

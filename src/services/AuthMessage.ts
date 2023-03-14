@@ -1,6 +1,7 @@
 import { PROXY_PASSWORD, PROXY_USER } from "config";
 
 import { Ip, Port } from "models";
+import { Session } from "./Session";
 
 export class AuthMessage {
   static generate(ip: Ip, port: Port) {
@@ -10,7 +11,9 @@ export class AuthMessage {
       `User-Agent: node\r\n` +
       `Proxy-Connection: Keep-Alive\r\n` +
       `Proxy-Authorization: Basic ${Buffer.from(
-        `${PROXY_USER}:${PROXY_PASSWORD}`
+        `${Session.getWithSession(PROXY_USER)}:${Session.getWithSession(
+          PROXY_PASSWORD
+        )}`
       ).toString("base64")}\r\n` +
       `\r\n`
     );
